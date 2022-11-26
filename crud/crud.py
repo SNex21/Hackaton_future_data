@@ -11,7 +11,8 @@ def create_img(db: Session, img_dep: dict, img_path: str):
         male=img_dep['male'],
         img = img_path,
         picType = img_dep['picType'],
-        usrType = img_dep['usrType']
+        usrType = img_dep['usrType'],
+        step = img_dep['step']
 
      )
     db.add(db_img)

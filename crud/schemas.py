@@ -6,6 +6,7 @@ class Img(BaseModel):
     male: str
     picType: str
     usrType: bool
+    step:str
 
     class Config:
         orm_mode = True
@@ -19,6 +20,7 @@ class imageList(BaseModel):
     img: str
     picType: str
     usrType: bool
+    step: str
 
     class Config:
         orm_mode = True

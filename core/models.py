@@ -11,6 +11,7 @@ class Image(Base):
     img = Column(String(4000), unique=True)
     picType = Column(String(255))
     usrType = Column(Boolean)
+    step = Column(String(255))
 
 
 class ApiToken(Base):
