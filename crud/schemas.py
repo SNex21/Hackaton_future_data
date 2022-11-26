@@ -4,14 +4,12 @@ class Img(BaseModel):
     api: str
     age: int
     male: str
-    category_id: int
+    picType: str
+    usrType: bool
+
     class Config:
         orm_mode = True
 
-
-class Category(BaseModel):
-    api: str
-    name: str
 
 
 class imageList(BaseModel):
@@ -19,7 +17,8 @@ class imageList(BaseModel):
     age: int
     male: str
     img: str
-    category_id: int
+    picType: str
+    usrType: bool
 
     class Config:
         orm_mode = True

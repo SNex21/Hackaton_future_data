@@ -9,15 +9,8 @@ class Image(Base):
     age = Column(Integer)
     male = Column(String(100))
     img = Column(String(4000), unique=True)
-    category_id = Column(Integer, ForeignKey("image_category.id"))
-
-
-class ImageCategory(Base):
-    __tablename__='image_category'
-
-    id = Column(Integer, primary_key=True, unique=True)
-    name = Column(String(100), unique=True)
-    img = relationship("Image")
+    picType = Column(String(255))
+    usrType = Column(Boolean)
 
 
 class ApiToken(Base):

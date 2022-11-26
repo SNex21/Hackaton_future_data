@@ -48,16 +48,6 @@ def get_all_db(img_dep: schemas.Img = Depends(), file: UploadFile = File(...), d
         raise HTTPException(status_code=400, detail="error api key not found")
 
 
-@app.post('/create_category')
-def create_category(cat: schemas.Category, db: Session = Depends(get_db)):
-    if crud.get_api_by_value(db=db, value=cat.api) != None:
-        crud.create_category(db=db, category=cat)
-
-        return {"message": "Succsesful!!!"}
-    else:
-        raise HTTPException(status_code=400, detail="error api key not found")
-
-
 @app.post('/get_api_key')
 def create_apikey(spec_key:str, db: Session = Depends(get_db)):
     if spec_key == SECRET_KEY :

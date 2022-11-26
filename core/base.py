@@ -1,2 +1,2 @@
 from .db import Base
-from .models import Image, ImageCategory
+from .models import Image

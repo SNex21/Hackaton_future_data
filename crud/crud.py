@@ -10,23 +10,15 @@ def create_img(db: Session, img_dep: dict, img_path: str):
         age=img_dep['age'],
         male=img_dep['male'],
         img = img_path,
-         category_id = img_dep['category_id']
+        picType = img_dep['picType'],
+        usrType = img_dep['usrType']
+
      )
     db.add(db_img)
     db.commit()
     db.refresh(db_img)
     return db_img
 
-
-def create_category(db: Session, category: schemas.Category):
-    db_category = models.ImageCategory(
-        name = category.name
-    )
-    db.add(db_category)
-    db.commit()
-    db.refresh(db_category)
-    return db_category
-    
 
 
 def create_api_key(db: Session, value: str, ):
